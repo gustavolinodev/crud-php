@@ -1,4 +1,5 @@
 <?php session_start();
+include_once("conection.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,11 +44,19 @@ tr:nth-child(even) {
     <th>Actions</th>
   </tr>
   <tr>
-    <td>ID</td>
-    <td>Name</td>
-    <td>CPF</td>
-    <td>PHONE</td>
-    <td>Actions</td>
+  <?php
+            $result = "SELECT * FROM list";
+            $resultado = mysqli_query($conn, $result);
+            while($row_list = mysqli_fetch_assoc($resultado)){
+            echo "<tr>";
+            echo "<td>".$row_list['id']."</td>";
+            echo "<td>".$row_list['name']."</td>";
+            echo "<td>".$row_list['cpf']."</td>";
+            echo "<td>".$row_list['phone']."</td>";
+            echo "<td>---</td>";
+            echo "</tr>";
+            }
+            ?>
   </tr>
 </table>
 
