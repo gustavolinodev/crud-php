@@ -53,7 +53,7 @@ tr:nth-child(even) {
             echo "<td>".$row_list['name']."</td>";
             echo "<td>".$row_list['cpf']."</td>";
             echo "<td>".$row_list['phone']."</td>";
-            echo "<td>---</td>";
+            echo "<td><a href='delete_proc.php?id=".$row_list['id']."'>Delete</a> | <a href='update.php?id=".$row_list['id']."'>Update</a></td>";
             echo "</tr>";
             }
             ?>
